@@ -38,18 +38,18 @@ class Stars extends React.Component {
         move: {
           enable: true,
           speed: 0.3
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: false
-            },
-            onclick: {
-              enable: false
-            },
-            resize: true
-          }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: false
+          },
+          onclick: {
+            enable: false
+          },
+          resize: true
         }
       },
       retina_detect: true

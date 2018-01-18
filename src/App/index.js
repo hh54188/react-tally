@@ -1,16 +1,9 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Statistic } from "semantic-ui-react";
+import { connect } from "react-redux";
 
 import Stars from "../Stars";
-
-const StatisticExampleStatistic = () => (
-  <Statistic color="teal">
-    <Statistic.Value>5550</Statistic.Value>
-    <Statistic.Label>Counts</Statistic.Label>
-  </Statistic>
-);
-
+import Counter from "../Counter";
 import "./index.less";
 
 class App extends React.Component {
@@ -18,13 +11,21 @@ class App extends React.Component {
     super(props);
   }
   render() {
+    const { counter } = this.props;
     return (
       <div>
         <Stars />
-        <StatisticExampleStatistic />
+        <Counter counter={counter} />
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  const { counter } = state;
+  return {
+    counter
+  };
+}
+
+export default connect(mapStateToProps)(App);
